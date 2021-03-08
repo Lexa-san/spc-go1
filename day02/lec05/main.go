@@ -48,7 +48,7 @@ func main() {
 	// }
 
 	// НЕ ИДЕОМАТИЧНО
-	if width := 100; wifth > 100 {
+	if width := 100; width > 100 {
 		fmt.Println("width > 100")
 	} else {
 		fmt.Println("width <= 100")
