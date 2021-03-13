@@ -6,67 +6,68 @@ import (
 )
 
 func main() {
-	// Простейший вывод на консоль
-	fmt.Println("Hello world")
+	//Простейший вывод на косноль. println - это вывод аргумента + '\n'
+	fmt.Println("Hello world", "Hello another")
 	fmt.Println("Second line")
-
-	// Простейший вывод без переноса строки
+	//Функция print - простой вывод аргумента
 	fmt.Print("First")
 	fmt.Print("Second")
 	fmt.Print("Third")
-
-	// форматированный вывод& Printf - стандартный вывод os.Stdout с флагами форматирования
+	//Форматированный вывод: Printf - стандартный вывод os.Stdout с флагами форматирования
 	fmt.Printf("\nHello, my name is %s\nMy age is %d\n", "Bob", 42)
-
-	//////////////////////////////
-	// Декларирование переменных
-
+	///////////////////////////////////
+	///////////////////////////////////
+	//Декларирование переменных
 	var age int
 	fmt.Println("My age is:", age)
-	age = 123
-	fmt.Println("var `age` after assignment:", age)
+	age = 32
+	fmt.Println("Age after assignment:", age)
 
-	// Декларирование и инициализация пользовательским значением
-	var height int = 234
+	//Декларирование и инициализация пользовательским значением
+	var height int = 183
 	fmt.Println("My height is:", height)
 
-	// В чем полустрогость типизации
-	uid := 12345
-	fmt.Printf("My uid:%d. Type is %T\n", uid, uid)
-	// Декларирование и инициализация переменный одного типа (множественный случай)
-	firstVar, secondVar := 1, 2
-	fmt.Printf("firstVar:%d, secondVar:%d\n", firstVar, secondVar)
-	// Декларирование блока переменных - наш выбор
+	//В чем "полустрогость" типзации? Можно опускать тип переменной
+	var uid = 12345
+	fmt.Println("My uid:", uid)
+	//Декларирование и инициализация переменных одного типа (множественный случай)
+	var firstVar, secondVar = 20, 30
+	fmt.Printf("FirstVar:%d SecondVar:%d\n", firstVar, secondVar)
+	//Декларирвоание блока переменных
 	var (
 		personName string = "Bob"
-		personAge  int    = 25
-		personUid  int
+		personAge         = 42
+		personUID  int
 	)
 
-	fmt.Printf("Name: %s, Age: %d, Uid: %d\n", personName, personAge, personUid)
+	fmt.Printf("Name: %s\nAge %d\nUID: %d\n", personName, personAge, personUID)
 
-	// Немного странного
-	a, b := 123, "qwe"
+	//Немного странного
+	var a, b = 30, "Vova"
 	fmt.Println(a, b)
+	a = 300
+	//Немного хорошего. Повторное декларирование переменной приводит к ошибке компиляции
+	//var a = 200
 
-	// Немного хорошего. Повторное декларирование переменной приводит к ошибки компиляции
-	// vat a = 200
-
-	// Короткая декларация
+	//Короткая декларция (корткое объявление)
 	count := 10
 	fmt.Println("Count:", count)
-	count++
+	count = count + 1
 	fmt.Println("Count:", count)
-	// Множественное присваивание через :=
-	aArg, bArg := 10, "Vova"
+	//Множественное присваивание через :=
+	aArg, bArg := 10, 30
 	fmt.Println(aArg, bArg)
-	aArg, bArg = 20, "Pasha"
+	aArg, bArg = 30, 40
 	fmt.Println(aArg, bArg)
-	// исключение из правила - достаточно одной новой переменной
-	aArg, cArg := 30, 123123
+	// aArg, bArg := 10, 30
+	// fmt.Println(aArg, bArg)
+
+	//Исключение из этого правила
+	bArg, cArg := 300, 400
 	fmt.Println(aArg, bArg, cArg)
 
-	// Пример
-	width, height := 20.5, 30.2
-	fmt.Printf("Min dimentionl of rectangle is: %.2f\n", math.Min(width, height))
+	//Пример
+	width, length := 20.5, 30.2
+	fmt.Printf("Min dimensional of rectangle is : %.2f\n", math.Min(width, length))
+
 }
