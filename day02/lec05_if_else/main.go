@@ -10,9 +10,9 @@ func main() {
 	fmt.Scan(&value)
 
 	if value%2 == 0 {
-		fmt.Println("The numner", value, "is even")
+		fmt.Println("The number", value, "is even")
 	} else {
-		fmt.Println("The numner", value, "is odd")
+		fmt.Println("The number", value, "is odd")
 	}
 
 	var color string
